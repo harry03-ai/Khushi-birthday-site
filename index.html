@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy Birthday Khushi 🎉</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body { margin: 0; font-family: 'Segoe UI', sans-serif; background: #ffe6f0; text-align: center; overflow-x: hidden; }
+    .name-screen { position: fixed; top:0; left:0; right:0; bottom:0; background:#ffebf2; display:flex; flex-direction:column; justify-content:center; align-items:center; z-index:99; }
+    .hidden { display:none; }
+    h1 { margin-top:20px; font-size:2em; color:#e91e63; }
+    .carousel { display:flex; overflow-x:auto; gap:10px; padding:20px; scroll-snap-type:x mandatory; }
+    .carousel img { width:200px; height:200px; object-fit:cover; border-radius:15px; scroll-snap-align:center; box-shadow:0 4px 12px rgba(0,0,0,0.2); }
+    #notes { padding:15px; text-align:left; background:#fff3f8; border-radius:15px; margin:20px; font-size:1em; color:#444; }
+    .gif-section { margin:20px auto; display:flex; gap:10px; justify-content:center; }
+    .gif-section img { width:100px; height:100px; border-radius:10px; }
+    button { padding:10px 20px; background:#e91e63; color:white; border:none; border-radius:10px; font-size:16px; }
+    audio { margin-top:20px; }
+  </style>
+</head>
+<body>
+
+  <!-- Name Prompt -->
+  <div class="name-screen" id="namePrompt">
+    <h2>What's your beautiful name?</h2>
+    <input type="text" id="nameInput" placeholder="Enter your name" style="padding:10px;font-size:16px;border-radius:10px;border:1px solid #ccc;">
+    <br><br>
+    <button onclick="checkName()">Enter</button>
+  </div>
+
+  <h1 id="greeting" class="hidden">Happy Happy Birthday Meri Doll Khushboooo 🫶🏻🫀</h1>
+
+  <div class="gif-section hidden" id="gifSection">
+    <img src="https://media.tenor.com/images/d53e73772c1012c3815e3edf4d47c50c/tenor.gif" alt="White Teddy Bear">
+    <img src="https://media.tenor.com/images/d1d2db374a00e9cc8211feebbebfa86a/tenor.gif" alt="Brown Teddy Bear">
+  </div>
+
+  <div class="carousel hidden" id="carousel">
+    <img src="img1.jpg">
+    <img src="img2.jpg">
+    <img src="img3.jpg">
+    <img src="img4.jpg">
+    <img src="img5.jpg">
+    <img src="img6.jpg">
+    <img src="img7.jpg">
+    <img src="img8.jpg">
+    <img src="img9.jpg">
+    <img src="img10.jpg">
+  </div>
+
+  <div id="notes" class="hidden">
+    <p>🌸 Khushi, you are not just my friend, you are my Jaaaaaannnn 😚</p>
+    <p>💖 Maybe I am Kejriwal kyuki main sirf AAP k bare me sochta hunn.</p>
+    <p>I still remember the day I saw you for the first time , and still your beauty and cuteness keeps increasing day by day ,night by night✨🤍</p>
+    <p>💫 Tum meri zindagi ka Ek bahotttt pyaara hissa ho!</p>
+    <p>🎈YOU Are my JIGAD Ka TUKDA Reee.</p>
+    <p>💕 You are the "<" to my "3" 🤭.</p>
+    <p>🌟 Happy Birthday once again, meri jaan Khushboooo!</p>
+  </div>
+
+  <audio controls autoplay loop class="hidden" id="bgmusic">
+    <source src="song.mp3" type="audio/mpeg">
+    Your browser does not support the audio tag.
+  </audio>
+
+  <script>
+    function checkName() {
+      const input = document.getElementById('nameInput').value.trim().toLowerCase();
+      if (input === 'khushi' || input === 'khushboo') {
+        document.getElementById('namePrompt').classList.add('hidden');
+        document.getElementById('greeting').classList.remove('hidden');
+        document.getElementById('gifSection').classList.remove('hidden');
+        document.getElementById('carousel').classList.remove('hidden');
+        document.getElementById('notes').classList.remove('hidden');
+        const bg = document.getElementById('bgmusic');
+        bg.classList.remove('hidden');
+        bg.play().catch(()=>{});
+      } else {
+        alert('Oops! This surprise is only for Khushi 💕');
+      }
+    }
+  </script>
+
+</body>
+</html>
